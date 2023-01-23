@@ -80,29 +80,3 @@ presults %>%
   pivot_longer(cols = - Degrees_of_Freedom) %>%
   ggplot(aes(Degrees_of_Freedom, value, color = name)) +
   geom_line()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
