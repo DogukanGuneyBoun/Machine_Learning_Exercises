@@ -1,3 +1,5 @@
+### A simple model selection exercise ###
+
 library(ggplot2)
 library(splines)
 
@@ -19,22 +21,18 @@ y <- fx + epsilon
 ggplot(data = NULL, aes(x = x)) + geom_line(aes(y = fx), linewidth = 1) + geom_point(aes(y = y), color = "blue")
 
 
-
 # Consider fitting a cubic spline with different number of knots. The true function is not a cubic spline, so we cannot expect to have an
 # unbiased estimator, however a spline with enough d.o.f. should approximate well our function, and then have low bias. 
 
 # To approximate bias and variance, we simulate many data sets and apply the same estimators to each data set, and we average. We then 
 # obtain a graph of the results that tells us how squared bias and variance behave as a function of d.o.f. 
 
-  
-  
 # set a random seed to make the results reproducible 
   
 set.seed(123) 
 
 n_sim <- 500
 n_df <- 8 
-
 
 # setup containers to store the results 
 
@@ -71,7 +69,6 @@ results <- t(results)
 colnames(results) <- c("Var", "SquaredBias", "MSE", "Naive",
                        "Degrees_of_Freedom")
 results <- data.frame(results)
-
 
 library(tidyverse)
 plabs <- c("Var", "SquaredBias", "MSE", "Degrees_of_Freedom")
