@@ -1,4 +1,4 @@
-### A simple model selection exercise ###
+### A simple model selection exercise: Fitting a polynomial to the data ###
 
 library(ggplot2)
 library(splines)
